@@ -1,0 +1,23 @@
+﻿@model List<PersonaViewModel>
+
+@*
+    
+*@
+@{
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-3">Numero Persone: @ViewBag.Count</h1>
+
+    @foreach (var persona in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@persona.Nome @persona.Cognome</h5>
+                <p class="card-text">@persona.NumeroTelefonico</p>
+                <a href="#" class="btn btn-primary" onclick="showPopup(@persona.ID)">Modifica</a>
+                <a href="#" class="btn btn-danger" onclick="DeletePersona(@persona.ID)">Elimina</a>
+            </div>
+        </div>
+    }
+</div>

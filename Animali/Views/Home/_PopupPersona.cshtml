@@ -1,0 +1,47 @@
+﻿@model PersonaViewModel
+@*
+
+*@
+@{
+}
+<div class="backdrop"></div>
+
+<div class="modal-popup">
+    <div class="container mt-5">
+        <h1>Modifica</h1>
+        <form asp-controller="Home" asp-action="UpdateForm" method="post" class="needs-validation" novalidate>
+            <div class="form-group" style="margin-bottom:3px">
+                <label for="Nome">Nome</label>
+                <input type="text" class="form-control" asp-for="Nome" value="@Model.Nome" required>
+                <div class="invalid-feedback">
+                    Per favore inserisci il nome.
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3px">
+                <label for="Cognome">Cognome</label>
+                <input type="text" class="form-control" asp-for="Cognome" value="@Model.Cognome" required>
+                <div class="invalid-feedback">
+                    Per favore inserisci il cognome.
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:3px">
+                <label for="NumeroTelefonico">Numero Telefonico</label>
+                <input type="text" class="form-control" asp-for="NumeroTelefonico" value="@Model.NumeroTelefonico" required>
+                <div class="invalid-feedback">
+                    Per favore inserisci il numero telefonico.
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="ID" value="@Model.ID">
+            <input type="hidden" asp-for="ID_ComuneDiNascita" value="@Model.ID_ComuneDiNascita">
+
+            <div style="margin-bottom:10px; margin-top:4px;">
+
+            <button type="button" class="btn btn-secondary" onclick="closePopup()">Chiudi</button>
+                <button type="submit" class="btn btn-primary">Invia</button>
+            </div>
+        </form>
+    </div>
+</div>

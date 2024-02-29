@@ -1,0 +1,32 @@
+﻿@model PersonaViewModel
+
+@{
+}
+
+<div class="backdrop" style="display:none"></div>
+<button type="button" class="btn btn-primary" onclick="showAddPersonForm()">Aggiungi persona</button>
+
+
+<div id="addPersonPopup" class="modal-popup" style="display: none;">
+    <div class="container mt-5">
+        <h1>Aggiungi Persona</h1>
+        <form asp-controller="Home" asp-action="SubmitForm" method="post" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="Nome">Nome</label>
+                <input type="text" class="form-control" asp-for="Nome" required>
+            </div>
+            <div class="form-group">
+                <label for="Cognome">Cognome</label>
+                <input type="text" class="form-control" asp-for="Cognome" required>
+            </div>
+            <div class="form-group">
+                <label for="NumeroTelefonico">Numero Telefonico</label>
+                <input type="text" class="form-control" asp-for="NumeroTelefonico" required>
+            </div>
+            <div style="margin-bottom:10px; margin-top:4px;">
+            <button type="button" class="btn btn-secondary" onclick="closeAddPersonForm()">Chiudi</button>
+            <input type="submit" class="btn btn-primary" value="Invia">
+            </div>
+        </form>
+    </div>
+</div>
